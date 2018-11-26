@@ -10,7 +10,7 @@ public class TestShape {
         System.out.println(s1.getPerimeter()); // which version?
         System.out.println(s1.getColor());
         System.out.println(s1.isFilled());
-        //System.out.println(s1.getRadius()); //(???)For fix this error we will declare method 'getRadius' in the class Shape
+        //System.out.println(s1.getRadius()); //class Circle is subclass of class Shape. We can't invoke methods of subclass from parent class.
 
         Circle c1 = (Circle)s1; // Downcast back to Circle
         System.out.println(c1);
@@ -27,7 +27,7 @@ public class TestShape {
         System.out.println(s3.getArea());
         System.out.println(s3.getPerimeter());
         System.out.println(s3.getColor());
-        //System.out.println(s3.getLength()); //(???)For fix this error we will declare method 'getLength' in the class Shape
+        //System.out.println(s3.getLength()); //class Rectangle is subclass of class Shape. We can't invoke methods of subclass from parent class.
 
         Rectangle r1 = (Rectangle)s3; // downcast
         System.out.println(r1);
@@ -39,7 +39,7 @@ public class TestShape {
         System.out.println(s4);
         System.out.println(s4.getArea());
         System.out.println(s4.getColor());
-        //System.out.println(s4.getSide()); //(???)For fix this error we will declare method 'getSide' in the class Shape
+        //System.out.println(s4.getSide()); //class Square is subclass of class Rectangle. We can't invoke methods of subclass from parent class.
 
 // Take note that we downcast Shape s4 to Rectangle,
 // which is a superclass of Square, instead of Square
@@ -47,7 +47,7 @@ public class TestShape {
         System.out.println(r2);
         System.out.println(r2.getArea());
         System.out.println(r2.getColor());
-        //  System.out.println(r2.getSide()); //Class Rectangle is subclass of Shape, method 'getSide' belongs to class Square, which appears to subclass of Rectangle
+        //System.out.println(r2.getSide()); //class Rectangle is subclass of class Shape. We can't invoke methods of subclass from parent class (s4 is object of parent class Shape).
         System.out.println(r2.getLength());
 
 // Downcast Rectangle r2 to Square
