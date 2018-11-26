@@ -9,10 +9,10 @@ public interface Movable {
 
 class MovablePoint implements Movable{
 
-    int x;
-    int y;
-    int xSpeed;
-    int ySpeed;
+    private int x;
+    private int y;
+    private int xSpeed;
+    private int ySpeed;
 
     public MovablePoint(int x, int y, int xSpeed, int ySpeed){};
 
@@ -21,15 +21,34 @@ class MovablePoint implements Movable{
         return "It's movable point";
     }
 
-    void moveUp();
-    void moveDown();
-    void moveLeft();
-    void moveRight();
+    @Override
+    public void moveDown() {
+        y -= ySpeed;
+    }
+
+    @Override
+    public void moveLeft() {
+        x -= xSpeed;
+    }
+
+    @Override
+    public void moveRight() {
+        x += xSpeed;
+    }
+
+    @Override
+    public void moveUp() {
+        y += ySpeed;
+    }
 }
 
 class MovableCircle implements Movable{
 
     private int radius;
+    private int x;
+    private int y;
+    private int xSpeed;
+    private int ySpeed;
     private MovablePoint center;
 
     public MovableCircle(int x, int y, int xSpeed, int ySpeed, int radius){
@@ -40,8 +59,27 @@ class MovableCircle implements Movable{
         this.radius = radius;
     }
 
-    void moveUp();
-    void moveDown();
-    void moveLeft();
-    void moveRight();
+    public String toString(){
+        return "It's movable circle";
+    }
+
+    @Override
+    public void moveDown() {
+        y -= ySpeed;
+    }
+
+    @Override
+    public void moveLeft() {
+        x -= xSpeed;
+    }
+
+    @Override
+    public void moveRight() {
+        x += xSpeed;
+    }
+
+    @Override
+    public void moveUp() {
+        y += ySpeed;
+    }
 }
