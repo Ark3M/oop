@@ -70,24 +70,92 @@ class Circle extends Shape {
     }
 }
 
-class Rectangle extends Shape{
+class Rectangle extends Shape {
 
-    protected double weight;
+    protected double width;
     protected double length;
 
-    public Rectangle(){};
+    public Rectangle() {
+    }
 
-    public Rectangle(double weight, double length){
-        this.weight = weight;
+    ;
+
+    public Rectangle(double weight, double length) {
+        this.width = weight;
         this.length = length;
     }
 
-    public Rectangle(double weight, double length, String color, boolean filled){
-        this.weight = weight;
+    public Rectangle(double width, double length, String color, boolean filled) {
+        this.width = width;
         this.length = length;
         this.color = color;
         this.filled = filled;
     }
-    
-    //Доделать 
+
+    public double getWidth(){
+        return width;
+    }
+
+    public void setWidth(double width){
+        this.width = width;
+    }
+
+    public double getLength(){
+        return length;
+    }
+
+    public void setLength(double length){
+        this.length = length;
+    }
+
+    public double getArea() {
+        return width * length;
+    }
+
+    public double getPerimeter() {
+        return (width + length) * 2;
+    }
+
+    public String toString() {
+        return "It's rectangle";
+    }
+
+}
+
+class Square extends Rectangle
+{
+    protected double side;
+
+    public Square(){};
+
+    public Square(double side){
+        this.side = side;
+    }
+
+    public Square(double side, String color, boolean filled){
+        this.side = side;
+        this.color = color;
+        this.filled = filled;
+    }
+
+    public double getSide(){
+        return side;
+    }
+
+    public void setSide(double side){
+        this.side = side;
+    }
+
+    public void setWidth(double side){
+        this.side = side;
+    }
+
+    public void setLength(double side){
+        this.side = side;
+    }
+
+    public String toString(){
+        return "It's square";
+    }
+
 }
