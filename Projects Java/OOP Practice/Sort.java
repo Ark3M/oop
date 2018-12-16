@@ -1,5 +1,3 @@
-package practice6;
-
 import java.util.Scanner;
 
 
