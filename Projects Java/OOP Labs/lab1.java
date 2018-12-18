@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.lang.*;
 
-public class Main {
+public class Lab1 {
     public static void main(String[] args) {
 //Task 1:
         System.out.println("Hello!!!");
